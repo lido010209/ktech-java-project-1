@@ -4,13 +4,13 @@
 
 ### 준비
 1. Create [Main](Main.java) class for running output
-2. Create class [ToDoList](Main.java) for object `list` (containing all tasks) 
+2. Create class [ToDoList](ToDoList.java) for object `list` (containing all tasks) 
 3. Create a file [project.csv](project.csv) to write data
 4. Create class [ToDoInputNumber](ToDoInputNumber.java) for catch error of input number.
 
 ### 방식
 
-#### [ToDoList](Main.java) Class
+#### [ToDoList](ToDoList.java) Class
 
 - Declare 2 variables `String title`, `String deadline`.
 - Initialize the *constructor*, *setter* and *getter*.
