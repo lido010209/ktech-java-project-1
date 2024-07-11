@@ -18,8 +18,8 @@
 #### [ToDoInputNumber](ToDoInputNumber.java) Class
 
 - Declare variable `int number`.
-- Initialize the constructor:
-    - Constructor is created with 2 parameters (`String str`, `int limit`)*
+- Initialize the *constructor*:
+    - Constructor is created with 2 parameters (`String str`, `int limit`).
     - Using `try-catch` to convert string to number.
         - Catch: `NumberFormatException`
         - Try: using condition if input number exceeds `limit` value, the result would be *the message of input valid number*
