@@ -4,7 +4,7 @@
 
 ### 준비
 1. Create [Main](Main.java) class for running output
-2. Create class [ToDoList](Main.java) for object *list* (containing all tasks) 
+2. Create class [ToDoList](Main.java) for object `list` (containing all tasks) 
 3. Create a file [project.csv](project.csv) to write data
 4. Create class [ToDoInputNumber](ToDoInputNumber.java) for catch error of input number.
 
@@ -12,35 +12,35 @@
 
 #### [ToDoList](Main.java) Class
 
-- Declare 2 variables *String title, String deadline*.
+- Declare 2 variables `String title`, `String deadline`.
 - Initialize the *constructor*, *setter* and *getter*.
 
 #### [ToDoInputNumber](ToDoInputNumber.java) Class
 
-- Declare variable *int number*.
+- Declare variable `int number`.
 - Initialize the constructor:
-    - Constructor is created with 2 parameters *(String str, int limit)*
-    - Using *try-catch* to convert string to number.
-        - Catch: **Number Format Exception**
-        - Try: using condition if input number exceeds *limit* value, the result would be print out *the advice of valid number*
+    - Constructor is created with 2 parameters (`String str`, `int limit`)*
+    - Using `try-catch` to convert string to number.
+        - Catch: `NumberFormatException`
+        - Try: using condition if input number exceeds `limit` value, the result would be *the message of input valid number*
       
-- Initialize the setter and getter.
+- Initialize the *setter* and *getter*.
 
 #### [Main](Main.java) Class
 
-##### **List<ToDoList> bufferedReader()** method
+##### `List<ToDoList> bufferedReader()` method
 
    - Read file [project.csv](project.csv)
-   - Return to *List<ToDoList>* type
+   - Return to `List<ToDoList>` type
 
-##### **Void bufferedWriter(List<ToDoList> list)** method
+##### `Void bufferedWriter(List<ToDoList> list)` method
    - Write into a file [project.csv](project.csv)
 
-##### **Main** method  
-1. Declare *List<ToDoList> list* from method **bufferedReader()**
-2. Run the loop **while (true)**
+##### `Main` method  
+1. Declare `List<ToDoList> list = bufferedReader()`
+2. Run the loop `while (true)`
 
-   *Input* display:
+   `Input` display:
 
     > ```java
     > Welcome!
@@ -56,43 +56,43 @@
     > Input: 
     > ```
 
-- Declare variable *input* from class *ToDoInputNumber* to automatically catch Exception without using try-catch in this Main.
+- Declare variable `input` from class `ToDoInputNumber` to automatically catch Exception without using try-catch in this `Main`.
 ```java
 String inputString = reader.readLine();
 ToDoInputNumber inputNumber = new ToDoInputNumber(inputString, 5);
 int input = inputNumber.getNumber();
 ```
     
-- Using condition for *input* variable from 1 to 5 to run the system.
+- Using condition for `input` variable from 1 to 5 to run the system.
 
-    - **1. Create TODO** (*input*=1):
-        - Input *title, deadline*
-        - Add into *list* with try-catch for **valid format of date**.
-    - **2. Edit TODO** (*input*=2): 
-      - Declare variable *editNumber* from class *ToDoInputNumber* to automatically catch *Exception* without using try-catch in this Main.
+    - **1. Create TODO** (`input==1`):
+        - Input `title`, `deadline`
+        - Add elements into `list` with `try-catch` for **valid format of date**.
+    - **2. Edit TODO** (`input==2`): 
+      - Declare variable `editNumber` from class `ToDoInputNumber` to automatically catch `Exception` without using try-catch in this `Main`.
         >```java
         >Input: 2
         >Edit TODO number: 
         >```
-      - Using condition for *editNumber*:
+      - Using condition for `editNumber`:
         - if editNumber in the range of number of tasks in list
-          - Input *title, deadline*
-          - Add into *list* with try-catch for **valid format of date**.
-        - else: skip
-    - **3. Finish TODO** (*input*=3):
-        - Declare *int finishNumber* like *editNumber*.
-        - Using condition for *finishNumber* like *editNumber*.
-            - *getTitle* from task of list and add *String* **" (Done)"** 
-    - **4. Delete TODO** (*input*=4): (like ***3. Finish TODO***)
-    - **5. Exit** (*input*=5): `break;`
+          - Input `title`, `deadline`
+          - Add elements into `list` with `try-catch` **valid format of date**.
+        - else: `continue`
+    - **3. Finish TODO** (`input==3`):
+        - Declare `int finishNumber` like `editNumber`.
+        - Using condition for `finishNumber` like `editNumber`.
+            - `getTitle` from task of list and add `String` **" (Done)"**
+    - **4. Delete TODO** (`input==4`): (same to **3. Finish TODO**)
+    - **5. Exit** (`input==5`): `break;`
 
 - ***Notice:*** When print output:
   1. Using condition to count the task not **(Done)** and print ```String.format(
   "You have %d TODOs left!!!", count)```
-  2. Using **stream** to sort *list* according to order of the deadline and print output.
+  2. Using `stream()` to sort `list` according to order of the deadline and print output.
 
-3. Out of loop **while (true)**
-    - Write into a file [project.csv](project.csv) by using method *bufferedWriter(list)*.
+3. Out of loop `while (true)`
+    - Write into a file [project.csv](project.csv) by using method `bufferedWriter(list)`.
    
 
 ## 기술
