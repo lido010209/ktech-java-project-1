@@ -61,8 +61,6 @@ public class Main {
 
                 System.out.print("Until: ");
                 String deadline = reader.readLine();
-
-
                 try {
                     list.add(new ToDoList(title, LocalDate.parse(deadline).toString()));
                 } catch (Exception e) {
