@@ -1,22 +1,21 @@
 # Ktech-java-project-1
 
-
 ## 실행
 
 ### 준비
-1. Create [Main](src/project/Main.java) class for running output
-2. Create class [ToDoList](src/project/Main.java) for object *list* (containing all tasks) 
-3. Create a file [project.csv](src/project/project.csv) to write data
-4. Create class [ToDoInputNumber](src/project/ToDoInputNumber.java) for catch error of input number.
+1. Create [Main](Main.java) class for running output
+2. Create class [ToDoList](Main.java) for object *list* (containing all tasks) 
+3. Create a file [project.csv](project.csv) to write data
+4. Create class [ToDoInputNumber](ToDoInputNumber.java) for catch error of input number.
 
 ### 방식
 
-#### [ToDoList](src/project/Main.java) Class
+#### [ToDoList](Main.java) Class
 
 - Declare 2 variables *String title, String deadline*.
 - Initialize the *constructor*, *setter* and *getter*.
 
-#### [ToDoInputNumber](src/project/ToDoInputNumber.java) Class
+#### [ToDoInputNumber](ToDoInputNumber.java) Class
 
 - Declare variable *int number*.
 - Initialize the constructor:
@@ -27,15 +26,15 @@
       
 - Initialize the setter and getter.
 
-#### [Main](src/project/Main.java) Class
+#### [Main](Main.java) Class
 
 ##### **List<ToDoList> bufferedReader()** method
 
-   - Read file [project.csv](src/project/project.csv)
+   - Read file [project.csv](project.csv)
    - Return to *List<ToDoList>* type
 
 ##### **Void bufferedWriter(List<ToDoList> list)** method
-   - Write into a file [project.csv](src/project/project.csv)
+   - Write into a file [project.csv](project.csv)
 
 ##### **Main** method  
 1. Declare *List<ToDoList> list* from method **bufferedReader()**
@@ -93,7 +92,7 @@ int input = inputNumber.getNumber();
   2. Using **stream** to sort *list* according to order of the deadline and print output.
 
 3. Out of loop **while (true)**
-    - Write into a file [project.csv](src/project/project.csv) by using method *bufferedWriter(list)*.
+    - Write into a file [project.csv](project.csv) by using method *bufferedWriter(list)*.
    
 
 ## 기술
@@ -109,6 +108,13 @@ int input = inputNumber.getNumber();
 
 ## 완수한 요구사항
 
-- 모두 완료
+### Self Checklist
 
-![Self Checklist](Self Checklist.png)
+- [x]  첫 화면
+- [x]  종료하기
+- [x]  TODO 만들기
+- [x]  TODO 수정하기
+- [x]  TODO 완료하기
+- [x]  TODO 삭제하기
+- [x]  재시작해도 TODO 유지
+- [x]  오류 입력에 대한 대응

@@ -20,6 +20,10 @@ public class Main {
             //Number of to dos
             if (list.size() == 0) {
                 System.out.println("You have no more TODOs left!!!");
+            } else if (list.size() == 1) {
+                System.out.println("You have 1 TODO left!!!");
+                System.out.println();
+                System.out.println("1. "+list.get(0).getTitle());
             } else {
                 int count = 0;
                 for (ToDoList task : list) {
@@ -79,15 +83,22 @@ public class Main {
                     System.out.print("Title: ");
                     String title = reader.readLine();
 
-                    System.out.print("Until: ");
-                    String deadline = reader.readLine();
-
-                    try {
-                        ToDoList taskNew = new ToDoList(title, LocalDate.parse(deadline).toString());
+                    if (!title.isEmpty()) {
+                        ToDoList taskNew = new ToDoList(title, list.get(editNumber - 1).getDeadline());
                         list.set(editNumber - 1, taskNew);
-                        System.out.println("Saved!!!");
-                    } catch (Exception e) {
-                        System.out.println("Please check valid format of date!!!");
+                    }
+                    else {
+                        System.out.print("Until: ");
+                        String deadline = reader.readLine();
+
+                        try {
+                            ToDoList taskNew = new ToDoList(list.get(editNumber-1).getTitle(),
+                                    LocalDate.parse(deadline).toString());
+                            list.set(editNumber - 1, taskNew);
+                            System.out.println("Saved!!!");
+                        } catch (Exception e) {
+                            System.out.println("Please check valid format of date!!!");
+                        }
                     }
                 } else continue;
             }
