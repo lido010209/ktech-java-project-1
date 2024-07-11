@@ -56,7 +56,7 @@
     > Input: 
     > ```
 
-- Declare variable `input` from class `ToDoInputNumber` to automatically catch Exception without using try-catch in this `Main`.
+- Declare variable `input` from class [ToDoInputNumber](ToDoInputNumber.java) to automatically catch Exception without using try-catch in this `Main`.
 ```java
 String inputString = reader.readLine();
 ToDoInputNumber inputNumber = new ToDoInputNumber(inputString, 5);
@@ -65,29 +65,29 @@ int input = inputNumber.getNumber();
     
 - Using condition for `input` variable from 1 to 5 to run the system.
 
-    - **1. Create TODO** (`input==1`):
+    - **Create TODO** (`input==1`):
         - Input `title`, `deadline`
         - Add elements into `list` with `try-catch` for **valid format of date**.
-    - **2. Edit TODO** (`input==2`): 
-      - Declare variable `editNumber` from class `ToDoInputNumber` to automatically catch `Exception` without using try-catch in this `Main`.
+    - **Edit TODO** (`input==2`): 
+      - Declare variable `editNumber` from class [ToDoInputNumber](ToDoInputNumber.java) to automatically catch `Exception` without using try-catch in this `Main`.
         >```java
         >Input: 2
         >Edit TODO number: 
         >```
       - Using condition for `editNumber`:
-        - if editNumber in the range of number of tasks in list
+        - If editNumber is in the range of number of tasks in list
           - Input `title`, `deadline`
           - Add elements into `list` with `try-catch` **valid format of date**.
-        - else: `continue`
-    - **3. Finish TODO** (`input==3`):
+        - Else: `continue`
+    - **Finish TODO** (`input==3`):
         - Declare `int finishNumber` like `editNumber`.
         - Using condition for `finishNumber` like `editNumber`.
             - `getTitle` from task of list and add `String` **" (Done)"**
-    - **4. Delete TODO** (`input==4`): (same to **3. Finish TODO**)
-    - **5. Exit** (`input==5`): `break;`
+    - **Delete TODO** (`input==4`): (same to **Finish TODO**)
+    - **Exit** (`input==5`): `break;`
 
 - ***Notice:*** When print output:
-  1. Using condition to count the task not **(Done)** and print ```String.format(
+  1. Using condition to count the task **not (Done)** and print ```String.format(
   "You have %d TODOs left!!!", count)```
   2. Using `stream()` to sort `list` according to order of the deadline and print output.
 
