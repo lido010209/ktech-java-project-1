@@ -111,6 +111,7 @@ public class Main {
                 int finishNumber = numToDo.getNumber();
 
                 if (finishNumber > 0 && finishNumber <= list.size()) {
+                    if (list.get(finishNumber-1).getTitle().contains(" (Done)")) continue;
                     list.get(finishNumber - 1).setTitle(
                             list.get(finishNumber - 1).getTitle() + " (Done)");
                 } else continue;
